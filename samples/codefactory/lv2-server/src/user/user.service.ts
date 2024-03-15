@@ -16,7 +16,7 @@ export class UserService {
   constructor(private cacheService: CacheService) {}
 
   async findById(id: string) {
-    return this.cacheService.users.find((user) => user.id);
+    return this.cacheService.users.find((user) => user.id === id);
   }
 
   async findByUsername(username: string): Promise<User | undefined> {
